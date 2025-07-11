@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './css/LoginPage.css';
 
-const LoginPage = () => {
+const LoginPage = ({ setIsAuthenticated }) => {
   const [form, setForm] = useState({ email: '', password: '' });
   const navigate = useNavigate();
 
@@ -13,6 +13,7 @@ const LoginPage = () => {
     })
       .then((res) => {
         if (res.ok) {
+          setIsAuthenticated(true);
           navigate('/interface');
         }
       })
