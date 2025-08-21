@@ -1,5 +1,5 @@
 // Interface.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './css/Interface.css';
 import {
   fetchPosts as apiFetchPosts,
@@ -14,6 +14,7 @@ const Interface = () => {
   const [image, setImage] = useState(null);
   const [posts, setPosts] = useState([]);
   const [editingPost, setEditingPost] = useState(null);
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     loadPosts();
@@ -43,6 +44,7 @@ const Interface = () => {
       }
       setContent('');
       setImage(null);
+      if (fileInputRef.current) fileInputRef.current.value = null;
       loadPosts();
     } catch (err) {
       console.error('Post failed', err);
@@ -90,6 +92,7 @@ const Interface = () => {
           <input
             type="file"
             accept="image/*"
+            ref={fileInputRef}
             onChange={(e) =>
               setImage(e.target.files && e.target.files[0] ? e.target.files[0] : null)
             }
