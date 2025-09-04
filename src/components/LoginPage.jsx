@@ -7,7 +7,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:3000/user/profile', {
+    fetch('https://minifeed-back.onrender.com/user/profile', {
       method: 'GET',
       credentials: 'include',
     })
@@ -42,7 +42,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/auth/login', {
+      const res = await fetch('https://minifeed-back.onrender.com/auth/login', {
         method: 'POST',
         credentials: 'include', // สำคัญ! เพื่อให้รับ/ส่ง cookie
         headers: { 'Content-Type': 'application/json' },

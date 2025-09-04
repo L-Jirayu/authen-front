@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://minifeed-back.onrender.com";
 
 /** =================== AUTH / USER =================== */
 export async function registerUser(data) {

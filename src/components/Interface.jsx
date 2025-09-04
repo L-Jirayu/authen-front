@@ -106,14 +106,14 @@ const Interface = () => {
               <p>{post.content}</p>
               {post.imageUrl && (
                 <img
-                  src={`http://localhost:3000/uploads/${post.imageUrl}`}
+                  src={`https://minifeed-back.onrender.com/uploads/${post.imageUrl}`}
                   alt="post"
                   className="post-image"
                 />
               )}
               {post.image && !post.imageUrl && (
                 <img
-                  src={`http://localhost:3000/${post.image}`}
+                  src={`https://minifeed-back.onrender.com/${post.image}`}
                   alt="post"
                   className="post-image"
                 />
