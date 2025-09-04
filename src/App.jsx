@@ -10,7 +10,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/user/profile', { credentials: 'include' })
+    fetch('https://minifeed-back.onrender.com/user/profile', { credentials: 'include' })
       .then(res => {
         if (res.ok) {
           setIsAuthenticated(true);
