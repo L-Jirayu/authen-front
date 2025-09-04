@@ -36,6 +36,11 @@ const SignupPage = () => {
       return;
     }
 
+    if (!/^\d+$/.test(form.tel)) {
+      alert("เบอร์โทรต้องเป็นตัวเลขเท่านั้น");
+      return;
+    }
+
     try {
       const res = await fetch('http://localhost:3000/user/register', {
         method: 'POST',
