@@ -1,4 +1,4 @@
-# Minifeed Frontend
+# Social Feed System Frontend
 ## Concept
 
 For study about Frontend Development and connect to Backend with API and combine with Authentication, CRUD and Upload File</br>
